@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCC845C815C4C9E60019172A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC845C715C4C9E60019172A /* UIKit.framework */; };
+		DCC845CA15C4C9E60019172A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC845C915C4C9E60019172A /* Foundation.framework */; };
+		DCC845CC15C4C9E60019172A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC845CB15C4C9E60019172A /* CoreGraphics.framework */; };
+		DCC845D215C4C9E60019172A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCC845D015C4C9E60019172A /* InfoPlist.strings */; };
+		DCC845D415C4C9E60019172A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC845D315C4C9E60019172A /* main.m */; };
+		DCC845D815C4C9E60019172A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC845D715C4C9E60019172A /* AppDelegate.m */; };
+		DCC845DB15C4C9E60019172A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC845DA15C4C9E60019172A /* ViewController.m */; };
+		DCC845DE15C4C9E60019172A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC845DC15C4C9E60019172A /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DCC845C315C4C9E60019172A /* RideNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC845C715C4C9E60019172A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DCC845C915C4C9E60019172A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DCC845CB15C4C9E60019172A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DCC845CF15C4C9E60019172A /* RideNow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RideNow-Info.plist"; sourceTree = "<group>"; };
+		DCC845D115C4C9E60019172A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DCC845D315C4C9E60019172A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCC845D515C4C9E60019172A /* RideNow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RideNow-Prefix.pch"; sourceTree = "<group>"; };
+		DCC845D615C4C9E60019172A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCC845D715C4C9E60019172A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DCC845D915C4C9E60019172A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DCC845DA15C4C9E60019172A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DCC845DD15C4C9E60019172A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCC845C015C4C9E60019172A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC845C815C4C9E60019172A /* UIKit.framework in Frameworks */,
+				DCC845CA15C4C9E60019172A /* Foundation.framework in Frameworks */,
+				DCC845CC15C4C9E60019172A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCC845B815C4C9E60019172A = {
+			isa = PBXGroup;
+			children = (
+				DCC845CD15C4C9E60019172A /* RideNow */,
+				DCC845C615C4C9E60019172A /* Frameworks */,
+				DCC845C415C4C9E60019172A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCC845C415C4C9E60019172A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCC845C315C4C9E60019172A /* RideNow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCC845C615C4C9E60019172A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCC845C715C4C9E60019172A /* UIKit.framework */,
+				DCC845C915C4C9E60019172A /* Foundation.framework */,
+				DCC845CB15C4C9E60019172A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCC845CD15C4C9E60019172A /* RideNow */ = {
+			isa = PBXGroup;
+			children = (
+				DCC845D615C4C9E60019172A /* AppDelegate.h */,
+				DCC845D715C4C9E60019172A /* AppDelegate.m */,
+				DCC845D915C4C9E60019172A /* ViewController.h */,
+				DCC845DA15C4C9E60019172A /* ViewController.m */,
+				DCC845DC15C4C9E60019172A /* ViewController.xib */,
+				DCC845CE15C4C9E60019172A /* Supporting Files */,
+			);
+			path = RideNow;
+			sourceTree = "<group>";
+		};
+		DCC845CE15C4C9E60019172A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCC845CF15C4C9E60019172A /* RideNow-Info.plist */,
+				DCC845D015C4C9E60019172A /* InfoPlist.strings */,
+				DCC845D315C4C9E60019172A /* main.m */,
+				DCC845D515C4C9E60019172A /* RideNow-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCC845C215C4C9E60019172A /* RideNow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC845E115C4C9E60019172A /* Build configuration list for PBXNativeTarget "RideNow" */;
+			buildPhases = (
+				DCC845BF15C4C9E60019172A /* Sources */,
+				DCC845C015C4C9E60019172A /* Frameworks */,
+				DCC845C115C4C9E60019172A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RideNow;
+			productName = RideNow;
+			productReference = DCC845C315C4C9E60019172A /* RideNow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCC845BA15C4C9E60019172A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Felix Mo";
+			};
+			buildConfigurationList = DCC845BD15C4C9E60019172A /* Build configuration list for PBXProject "RideNow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DCC845B815C4C9E60019172A;
+			productRefGroup = DCC845C415C4C9E60019172A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCC845C215C4C9E60019172A /* RideNow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCC845C115C4C9E60019172A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC845D215C4C9E60019172A /* InfoPlist.strings in Resources */,
+				DCC845DE15C4C9E60019172A /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCC845BF15C4C9E60019172A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC845D415C4C9E60019172A /* main.m in Sources */,
+				DCC845D815C4C9E60019172A /* AppDelegate.m in Sources */,
+				DCC845DB15C4C9E60019172A /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DCC845D015C4C9E60019172A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCC845D115C4C9E60019172A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DCC845DC15C4C9E60019172A /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCC845DD15C4C9E60019172A /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCC845DF15C4C9E60019172A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DCC845E015C4C9E60019172A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCC845E215C4C9E60019172A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RideNow/RideNow-Prefix.pch";
+				INFOPLIST_FILE = "RideNow/RideNow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DCC845E315C4C9E60019172A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RideNow/RideNow-Prefix.pch";
+				INFOPLIST_FILE = "RideNow/RideNow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCC845BD15C4C9E60019172A /* Build configuration list for PBXProject "RideNow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC845DF15C4C9E60019172A /* Debug */,
+				DCC845E015C4C9E60019172A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC845E115C4C9E60019172A /* Build configuration list for PBXNativeTarget "RideNow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC845E215C4C9E60019172A /* Debug */,
+				DCC845E315C4C9E60019172A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCC845BA15C4C9E60019172A /* Project object */;
+}
