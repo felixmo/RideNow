@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><link rel="SHORTCUT ICON" href="../Apps/INFO/images/favicon.ico"></link><link href="FILE/Apps/Info/yrt/styles/base.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/structure.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/sitecontent.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/icreate.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/navigation.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/triptools.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/form.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/print.css" rel="stylesheet" media="print"></link><link href="FILE/Apps/Info/yrt/share/share.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/tablestyles.css" rel="stylesheet" type="text/css" media="screen"></link><link href="FILE/Apps/Info/yrt/styles/info.css" rel="stylesheet" type="text/css" media="screen"></link><script type="text/javascript" language="javascript" src="FILE/Apps/INFO/yrt/scripts/jquery-1.3.2.min.js"></script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/jQuery.cookies.js"></script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/dropdown.js"></script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/general.js"></script><script language="javascript" type="text/javascript">jQuery.noConflict();</script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/translateitems.js"></script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/textSize.js"></script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/share/share.js"></script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/share/shareitems.js"></script><link href="FILE/Apps/Info/yrt/styles/contextMenu.css" rel="stylesheet" type="text/css" media="screen"></link><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/jquery.contextMenu.js"></script><script language="javascript" type="text/javascript">
+	
+		jQuery(function() {
+	
+			// Custom Table Styles
+			// Shows context menu when tables within printArea are clicked on
+			// Context menu HTML located in footer.asp (use this code on i:Create side only)
+			jQuery("#printArea table").contextMenu({ menu: 'tableStyles' },
+	
+				function(action, el, pos) {
+	
+					isMenuLoaded = false;
+	
+					// Letting i:Create know content has changed so as to prompt to save if user tries to leave
+					if (jQuery("#ActiveArea", top.document))
+					jQuery("#ActiveArea", top.document).val('TableStyles');
+	
+					StyleTables(el, action);
+	
+				}
+		   
+			);
+		});
+	
+		// Finding tables with class "datatable" applied to them.  
+		// Traversing rows to automatically apply styles for large tables
+		function StyleTables(el, action) {
+			tableElement = jQuery(el);
+	
+			if (action != 'clear') {
+				tableElement.attr('class', 'datatable');
+	
+				tableElement.find('tr:even').each(function() {
+					jQuery(this).attr('class', 'row')
+				});
+	
+				if (action != "datatablenoheader") {
+					tableElement.find('tr:first').attr('class', 'titlerow');
+				}
+	
+				tableElement.find('tr:odd').each(function() {
+					jQuery(this).attr('class', 'altrow')
+				});
+			}
+			else {
+				tableElement.removeAttr('class');
+			}
+			RemovejQueryAttributes();
+		}
+	
+		//	jQuery is adding attributes that begin with 'jQuery' to elements
+		//	within the data table.  This may be causing an issue with i:Create's ability to save.
+		//	Removing these attributes via Regular Expressions.  Does not work in FireFox, but 
+		//	user will not be editing content in FireFox as it does not work with i:Create
+		function RemovejQueryAttributes() {
+			jQuery('table').each(function() {
+				tempHTML = jQuery(this).html();
+				tempHTML = tempHTML.replace(/(jQuery\d+=\"\d+\")+/gi, "");
+				jQuery(this).html(tempHTML);
+			});
+		}
+	
+	</script><script src="FILE/Apps/Info/sifr/sifr.js" type="text/javascript"></script><script src="FILE/Apps/Info/sifr/sifr-addons.js" type="text/javascript"></script><link rel="stylesheet" type="text/css" media="all" href="File/Apps/Info/CSS/calendar-gui.css" title="win2k"></link><script language="JavaScript" src="FILE/Apps/Info/Javascript/Info.js"></script><script language="JavaScript" src="FILE/Apps/Info/Javascript/EventsInfo.js"></script><script language="JavaScript" src="FILE/Apps/Info/javascript/corners.js" type="text/javascript"></script><script language="JavaScript" src="FILE/Apps/Info/javascript/common.js" type="text/javascript"></script><link type="text/css" rel="Stylesheet" href="FILE/Apps/Info/CSS/MapDraw.css"></link><script src="FILE/Apps/Info/Javascript/detect.js" language="JavaScript"></script><script>
+			document.write('\x3Clink rel = "stylesheet" type = "text\/css" href = "FILE/Apps/System/CSS/'+document.browserType+'.css" /\x3E');
+	        </script><script src="FILE/Apps/Info/javascript/MapNav.js" language="JavaScript"></script><script src="FILE/Apps/Info/javascript/system.js" language="JavaScript"></script><script language="JavaScript" src="File/Apps/Info/Javascript/calendar.js"></script><script language="JavaScript" src="File/Apps/Info/Javascript/calendarHelper.js"></script><script>
+			 if (navigator.appName == 'Netscape') 
+					document.write('\x3Clink rel = "stylesheet" type = "text\/css" href = "FILE/Apps/System/CSS/autocomplete_ff.css" /\x3E');
+			 else
+				document.write('\x3Clink rel = "stylesheet" type = "text\/css" href = "FILE/Apps/System/CSS/autocomplete.css" /\x3E');
+		 </script><script language="JavaScript" src="FILE/Apps/System/Javascript/prototype.js"></script><script language="JavaScript" src="FILE/Apps/System/Javascript/logging.js"></script><script language="JavaScript" src="FILE/Apps/System/Javascript/autocomplete.js"></script><script language="JavaScript" src="FILE/Apps/System/Javascript/ajax.js"></script><title>YRT VIVA Information Line Next Bus</title><script language="javascript" type="text/javascript">
+						 var tabIndex = 0;
+						 var tabIndexEnd = 0;
+					</script><script type="text/javascript" language="javascript" src="FILE/Apps/Info/yrt/scripts/custom-form-elements.js"></script><script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAUEOn4qTMGqXHFgyFXZ5K2xQRINW9nTKEIbvmhJz5AI3rs5VltxTWyBpkjHgaGPOgpFdy7rg89A6qbQ&amp;sensor=false" type="text/javascript"></script><script type="text/javascript">
+                            function initialize()
+                            {
+                            if (GBrowserIsCompatible())
+                            {
+																	
+							var map = new GMap2(document.getElementById("map_canvas"));
+							
+							var OLat = 43897140 / 1000000;
+							var OLon = -79313444 / 1000000;
+							map.setCenter(new GLatLng(OLat,OLon), 13);
+						
+							
+							
+								{
+								/*	var baseIcon = new GIcon(G_DEFAULT_ICON);
+									baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+									baseIcon.iconSize = new GSize(20, 34);
+									baseIcon.shadowSize = new GSize(37, 34);
+									baseIcon.iconAnchor = new GPoint(9, 34);
+									baseIcon.infoWindowAnchor = new GPoint(9, 2);
+									var OriginIcon = new GIcon(baseIcon);
+									OriginIcon.image = "http://www.google.com/mapfiles/marker.png";
+									markerOptions = { icon:OriginIcon };
+									*/
+									var stopIcon = new GIcon();
+									stopIcon.image = "http://labs.google.com/ridefinder/images/mm_20_blue.png";
+									stopIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+									stopIcon.iconSize = new GSize(12, 20);
+									stopIcon.shadowSize = new GSize(22, 20);
+									stopIcon.iconAnchor = new GPoint(6, 20);
+									stopIcon.infoWindowAnchor = new GPoint(5, 1);
+									markerOptions = { icon:stopIcon };
+
+									var markerO = new GMarker(new GLatLng(OLat,OLon),markerOptions);
+									markerO.openInfoWindowHtml('Stop Info:<br/>' + 'WILLIAM BERCZY BLVD / WINSTON CASTL  (Stop #: 1869)');
+									map.addOverlay(markerO);
+									
+									 GEvent.addListener(markerO, "mouseover",
+									function() { markerO.openInfoWindowHtml('Stop Info:<br/>' + 'WILLIAM BERCZY BLVD / WINSTON CASTL  (Stop #: 1869)')});
+
+                            
+								}
+							
+                            map.setUIToDefault();
+							
+                            }
+                            }
+                        </script></head><body onunload="GUnload()"><SCRIPT language="JScript">
+					var oPopup = window.createPopup();
+					oPopup.document.createStyleSheet("FILE/Apps/Info/CSS/pophelpTL.css");
+					oPopup.document.createStyleSheet("FILE/Apps/Info/CSS/main.css");
+					oPopup.document.body.style.border = "solid black 0px";	
+				</SCRIPT><div id="backgroundOutside"><div id="background"><div id="headerOutside"><div id="header"><div id="search"><form name="FormSearch" id="FormSearch" method="post" action=""><label for="searchField" style="display: none;">Search</label><input id="searchField" class="searchText" name="" value="Search" type="text" onfocus="Search_Enter(this);" onblur="Search_Leave(this);"></input><input id="" class="gobutton" name="submit" value="" type="image" src="FILE/Apps/INFO/yrt/images/structure/spacer.gif"></input></form></div><div id="topNav"><a href="http://www.yrt.ca/en/index.asp">Home</a><span class="horizNavSeparator"></span><a href="http://www.yrt.ca/en/aboutus/contactus.asp">Contact Us</a><span class="horizNavSeparator"></span><a href="http://www.yrt.ca/en/ridingwithus/howtosfaqs.asp">FAQs</a><span class="horizNavSeparator"></span><a href="http://www.yrt.ca/en/schedulesmaps/googletransit.asp">Google Maps</a><span class="horizNavSeparator"></span></div><div id="logo"><a href="http://www.yrt.ca/en/index.asp" title="Click to go back Home"><img src="FILE/Apps/Info/images/structure/yrt-viva-logo.png" width="209" height="51" alt="York Region Transit/Viva Logo"></img></a></div><div id="mainNav"><ul id="nav"><li id="navTab01"><a class="mainNavItem" href="http://www.yrt.ca/en/schedulesmaps/schedulesmaps.asp" title="Schedules &amp; Maps">Schedules &amp; Maps</a><div class="mainNavDropdown"><div class="mainNavDropdownOutside"><div class="mainNavDropdownInside"><ul class="dropdown"><li><a class="" href="http://tripplanner.yrt.ca/" title="Trip Planner">Trip Planner</a></li><li><a class="" href="http://tripplanner.yrt.ca/hiwire?.a=iScheduleLookup" title="Schedule Finder">Schedule Finder</a></li><li><a class="" href="http://tripplanner.yrt.ca/hiwire?.a=iNextBus" title="RideNow">RideNow</a></li><li><a class="" href="http://tripplanner.yrt.ca/hiwire?.a=iLocationLookup" title="Closest Stop">Closest Stop</a></li><li><a class="dropdownItemHasFlyout" href="http://www.yrt.ca/en/schedulesmaps/maps.asp" title="Maps">Maps</a><ul class="flyout"><li><a class="" href="http://www.yrt.ca/en/schedulesmaps/systemmap.asp" title="YRT/Viva system Map">YRT/Viva system Map</a></li><li><a class="" href="http://www.yrt.ca/en/schedulesmaps/vivarapidtransitmap.asp" title="Viva Rapid Transit Maps">Viva Rapid Transit Maps</a></li><li><a class="" href="http://www.yrt.ca/en/schedulesmaps/municipalmaps.asp" title="By municipality">By municipality</a></li><li><a class="" href="http://www.yrt.ca/en/schedulesmaps/shuttles_express.asp" title="GO Shuttles &amp; Express services">GO Shuttles &amp; Express services</a></li></ul></li><li><a class="dropdownItemHasFlyout" href="http://www.yrt.ca/en/schedulesmaps/routenavigators.asp" title="Route Navigators">Route Navigators</a><ul class="flyout"><li><a class="" href="http://www.yrt.ca/en/schedulesmaps/school.asp" title="School services">School services</a></li></ul></li><li><a class="last" href="http://www.yrt.ca/en/serviceupdates/futureservicechanges.asp" title="Future service changes">Future service changes</a></li></ul><div class="clear"></div></div></div></div></li><li id="navTab02"><a class="mainNavItem" href="http://www.yrt.ca/en/farespasses/farespasses.asp" title="Fares &amp; Passes">Fares &amp; Passes</a><div class="mainNavDropdown"><div class="mainNavDropdownOutside"><div class="mainNavDropdownInside"><ul class="dropdown"><li><a class="dropdownItemHasFlyout" href="http://www.yrt.ca/en/farespasses/prices.asp" title="Prices">Prices</a><ul class="flyout"><li><a class="" href="http://www.yrt.ca/en/farespasses/monthlypass.asp" title="Monthly Pass">Monthly Pass</a></li><li><a class="" href="http://www.yrt.ca/en/farespasses/gtaweeklypass.asp" title="GTA Weekly Pass">GTA Weekly Pass</a></li><li><a class="" href="http://www.yrt.ca/en/farespasses/studentpass.asp" title="Student fares">Student fares</a></li></ul></li><li><a class="" href="http://www.yrt.ca/en/farespasses/wheretobuy.asp" title="Where to buy">Where to buy</a></li><li><a class="" href="http://www.yrt.ca/en/farespasses/farezonessupplements.asp" title="Fare zones &amp; supplements">Fare zones &amp; supplements</a></li><li><a class="" href="http://www.yrt.ca/en/farespasses/proofofpaymenttransfers.asp" title="Proof of payment &amp; transfers">Proof of payment &amp; transfers</a></li><li><a class="" href="http://www.yrt.ca/en/farespasses/farepolicy.asp" title="Fare policies">Fare policies</a></li><li><a class="" href="http://www.yrt.ca/en/farespasses/transittaxcredit.asp" title="Transit tax credit">Transit tax credit</a></li><li><a class="last" href="http://www.yrt.ca/en/farespasses/presto.asp" title="PRESTO">PRESTO</a></li></ul><div class="clear"></div></div></div></div></li><li id="navTab03"><a class="mainNavItem" href="http://www.yrt.ca/en/ridingwithus/ridingwithus.asp" title="Riding with Us">Riding with Us</a><div class="mainNavDropdown"><div class="mainNavDropdownOutside"><div class="mainNavDropdownInside"><ul class="dropdown"><li><a class="dropdownItemHasFlyout" href="http://www.yrt.ca/en/ridingwithus/ourservices.asp" title="Our services">Our services</a><ul class="flyout"><li><a class="" href="http://www.yrt.ca/en/ridingwithus/yrtviva.asp" title="YRT/Viva">YRT/Viva</a></li><li><a class="" href="http://www.yrt.ca/en/ridingwithus/mobilityplus.asp" title="Mobility Plus">Mobility Plus</a></li></ul></li><li><a class="" href="http://www.yrt.ca/en/ridingwithus/connectingservices.asp" title="Connecting services">Connecting services</a></li><li><a class="" href="http://www.yrt.ca/en/ridingwithus/safetysecurity.asp" title="Safety &amp; security">Safety &amp; security</a></li><li><a class="" href="http://www.yrt.ca/en/ridingwithus/accessibility.asp" title="Accessibility">Accessibility</a></li><li><a class="dropdownItemHasFlyout" href="http://www.yrt.ca/en/ridingwithus/howtosfaqs.asp" title="How-tos &amp; FAQs">How-tos &amp; FAQs</a><ul class="flyout"><li><a class="" href="http://www.yrt.ca/en/ridingwithus/bikenbus.asp" title="Bike 'n' Bus">Bike 'n' Bus</a></li></ul></li><li class="last"><a class="" href="http://www.yrt.ca/en/ridingwithus/hoursofoperation.asp" title="Hours of operation">Hours of operation</a></li></ul><div class="clear"></div></div></div></div></li><li id="navTab04"><a class="mainNavItem" href="http://www.yrt.ca/en/serviceupdates/serviceupdates.asp" title="Service Updates">Service Updates</a><div class="mainNavDropdown"><div class="mainNavDropdownOutside"><div class="mainNavDropdownInside"><ul class="dropdown"><li><a class="" href="http://www.yrt.ca/en/serviceupdates/rideralerts.asp" title="Rider alerts">Rider alerts</a></li><li><a class="" href="http://www.yrt.ca/en/serviceupdates/ridenowrealtime.asp" title="RideNow">RideNow</a></li><li><a class="" href="http://www.yrt.ca/en/Newsmodule/index.aspx?departmentId=I82X5exjK422E8HPlUsqZdAJgeQuAleQuAl" title="News &amp; events">News &amp; events</a></li><li><a class="" href="http://www.yrt.ca/en/serviceupdates/currentprojects.asp" title="Current projects">Current projects</a></li><li><a class="" href="http://www.yrt.ca/en/serviceupdates/futureservicechanges.asp" title="Future service changes">Future service changes</a></li><li class="last"><a class="" href="http://www.yrt.ca/en/serviceupdates/stayinformed.asp" title="Stay informed">Stay informed</a></li></ul><div class="clear"></div></div></div></div></li><li id="navTab05"><a class="mainNavItem" href="http://www.yrt.ca/en/aboutus/aboutus.asp" title="About Us">About Us</a><div class="mainNavDropdown"><div class="mainNavDropdownOutside"><div class="mainNavDropdownInside"><ul class="dropdown"><li><a class="" href="http://www.yrt.ca/en/aboutus/fastfacts.asp" title="Fast facts">Fast facts</a></li><li><a class="" href="http://www.yrt.ca/en/aboutus/history.asp" title="History">History</a></li><li><a class="" href="http://www.yrt.ca/en/aboutus/serviceplanning.asp" title="Service Planning">Service Planning</a></li><li><a class="" href="http://www.yrt.ca/en/aboutus/transitenforcement.asp" title="Transit Enforcement">Transit Enforcement</a></li><li><a class="dropdownItemHasFlyout" href="http://www.yrt.ca/en/aboutus/ourfacilities.asp" title="Our facilities">Our facilities</a><ul class="flyout"><li><a class="" href="http://www.yrt.ca/en/aboutus/street_furniture.asp" title="Street furniture">Street furniture</a></li><li><a class="" href="http://www.yrt.ca/en/aboutus/parknride.asp" title="Park 'n' Ride">Park 'n' Ride</a></li><li><a class="" href="http://www.yrt.ca/en/aboutus/bikeracks.asp" title="Bike racks">Bike racks</a></li></ul></li><li><a class="" href="http://www.yrt.ca/en/aboutus/ourvehicles.asp" title="Our vehicles">Our vehicles</a></li><li><a class="dropdownItemHasFlyout" href="http://www.yrt.ca/en/aboutus/ourtechnology.asp" title="Our technology">Our technology</a><ul class="flyout"><li><a class="" href="http://www.yrt.ca/en/aboutus/developer.asp" title="Developer Centre">Developer Centre</a></li></ul></li><li><a class="" href="http://www.yrt.ca/en/aboutus/business.asp" title="Business with YRT/Viva">Business with YRT/Viva</a></li><li><a class="" href="http://www.yrt.ca/en/aboutus/feedbackform.asp" title="Feedback">Feedback</a></li><li class="last"><a class="" href="http://www.yrt.ca/en/aboutus/contactus.asp" title="Contact us">Contact us</a></li></ul><div class="clear"></div></div></div></div></li><li id="navTab06"><a class="mainNavItem" href="http://www.yrt.ca/en/programs/programs.asp" title="Programs">Programs</a><div class="mainNavDropdown"><div class="mainNavDropdownOutside"><div class="mainNavDropdownInside"><ul class="dropdown"><li><a class="" href="http://www.yrt.ca/en/programs/parkbikenride.asp" title="Park Bike 'n' Ride">Park/Bike 'n' Ride</a></li><li><a class="" href="http://www.yrt.ca/en/programs/yoyouthonboard.asp" title="YO! (Youth On-Board)">YO! (Youth On-Board)</a></li><li><a class="" href="http://www.yrt.ca/en/programs/50togo.asp" title="50¢ to GO">50¢ to GO</a></li><li><a class="" href="http://www.yrt.ca/en/programs/requeststop.asp" title="Request stop">Request stop</a></li><li><a class="" href="http://www.yrt.ca/en/programs/reduceyourcarbonfootprint.asp" title="Reduce your carbon footprint">Reduce your carbon footprint</a></li><li class="last"><a class="" href="http://www.yrt.ca/en/programs/myride.asp" title="MyRide">MyRide</a></li></ul><div class="clear"></div></div></div></div></li></ul></div></div></div><div id="uber" class="navColour02"><div id="main" class="mainInterior"><div id="mainTopShadow"> </div><div id="breadcrumbs"><span><a href="http://www.yrt.ca">Home</a></span><span class="horizNavSeparator"> </span><a href="javascript:history.go(-1);">RideNow</a><span class="horizNavSeparator"> </span><span>Results</span></div><div id="actionsContainer"> </div><div id="contentBackground"><div id="printArea"><div id="toolsContentLeftRideNow"><h1>RideNow Results</h1><table id="fromTo" width="500" border="0" cellspacing="0" cellpadding="0"><tr><td colspan="2"></td></tr><tr><td><p class="darkGrey">Stop#</p></td><td><p class="fullCapsGrey">1869</p></td></tr><tr style="vertical-align:top;"><td><p class="darkGrey">Where</p></td><td><p class="fullCapsGrey">WILLIAM BERCZY BLVD / WINSTON CASTL<br/>
+						ON 
+							WILLIAM BERCZY BLVD
+						 AT 
+							WINSTON CASTLE DR</p></td></tr><tr><td><p class="darkGrey">Date</p></td><td><p class="grey">07-28-2012</p></td></tr></table><p class="noSpacing">This request was generated on 07-28-2012 at 9:30pm
+			</p><div class="plainWhiteBoxMediumOutside"><div class="plainWhiteBoxMediumInside"><div class="plainWhiteBoxMedium"><table width="100%" class="datatable"><tr class="titlerow"><td>Route Name</td><td>Route #</td><td>Direction</td><td>Scheduled<br/>
+							Departure <br/>
+							Time</td><td>Status</td><td>Estimated<br/>
+							Departure<br/>
+							Time</td><td>Map It</td></tr><tr class="altrow"><td align="center" width="393px">KENNEDY                </td><td align="center" width="120px">008</td><td valign="top" align="center">RT 8 Kennedy to Major Mackenzie</td><td align="center" width="90px"> 9:50 p.m.</td><td align="center" width="100px">
+														 No info available
+													</td><td align="center" width="90px">NA</td><td align="center"><img src="FILE/Apps/Info/yrt/images/triptools/mapIt.gif"></img></td></tr><tr class="row"><td align="center" width="393px">KENNEDY                </td><td align="center" width="120px">008</td><td valign="top" align="center">RT 8 Kennedy to Major Mackenzie</td><td align="center" width="90px">10:25 p.m.</td><td align="center" width="100px">
+														 No info available
+													</td><td align="center" width="90px">NA</td><td align="center"><img src="FILE/Apps/Info/yrt/images/triptools/mapIt.gif"></img></td></tr></table><div class="clear"></div></div></div></div><p style="margin-top:10px; padding: 0px 20px 8px 20px;">All times are approximate and subject to weather and traffic conditions. Visit our <a href="http://www.yrt.ca/news/commuter-alerts.asp" target="_blank">Commuter Alerts</a> page for any detours or major delays that may affect your route. Real-time info may not always be available. Please refer to scheduled trip times provided. </p><div class="plainWhiteBoxMediumOutside"><div class="plainWhiteBoxMediumInside"><div class="plainWhiteBoxMedium"><p style="color:#00568a;">All Routes Stopping At This Location</p><table width="100%" class="datatable"><tr class="titlerow"><td>Route #</td><td>Route Name</td><td>Direction</td><td>View Schedule</td></tr><tr class="altrow"><td valign="top" align="center">008</td><td valign="top" align="center">KENNEDY                </td><td valign="top" align="center">NORTHBOUND  </td><td valign="top" align="center"><form name="HW1" method="get" action="hiwire" id="HW1"><input type="hidden" name=".a" value="iHeadwaySheet"/><input type="hidden" name=".s" value="751dd670"/><input type="hidden" name="FromTime" value="5:00a"/><input type="hidden" name="ToTime" value="3:00x"/><input type="hidden" name="StopNum" value=""/><input type="hidden" name="LineDirId" value="159220"/><input type="hidden" name="LineDirection" value="NORTHBOUND  "/><input type="hidden" name="LineName" value="KENNEDY                "/><input type="hidden" name="LineAbbr" value="008"/><input type="hidden" name="STOP1869" value="1869"/><input type="hidden" name="StopDisplay" value="Select"/><a href="javascript:document.HW1.submit();">Today's Schedule</a></form></td></tr><tr class="row"><td valign="top" align="center">008</td><td valign="top" align="center">KENNEDY                </td><td valign="top" align="center">SOUTHBOUND</td><td valign="top" align="center"><form name="HW2" method="get" action="hiwire" id="HW2"><input type="hidden" name=".a" value="iHeadwaySheet"/><input type="hidden" name=".s" value="751dd670"/><input type="hidden" name="FromTime" value="5:00a"/><input type="hidden" name="ToTime" value="3:00x"/><input type="hidden" name="StopNum" value=""/><input type="hidden" name="LineDirId" value="159221"/><input type="hidden" name="LineDirection" value="SOUTHBOUND"/><input type="hidden" name="LineName" value="KENNEDY                "/><input type="hidden" name="LineAbbr" value="008"/><input type="hidden" name="STOP1869" value="1869"/><input type="hidden" name="StopDisplay" value="Select"/><a href="javascript:document.HW2.submit();">Today's Schedule</a></form></td></tr></table><div class="clear"></div></div></div></div></div><div id="toolsContentRightRideNow"><div id="toolsMapRide"><div id="map_canvas" style="width: 300px; height: 900px; "></div><div id="mapCornersTop"> </div><div id="mapCornersBottom"> </div></div></div><div class="clear"></div></div><div class="clear"></div></div><div id="contentBottom"> </div><div class="clear"></div><div id="linksBar"><ul><li id="riderAlerts" class="red"><a href="http://www.yrt.ca/en/serviceupdates/rideralerts.asp" id="riderAlertsButton" title="Rider Alerts">Rider Alerts</a></li><li id="rideNow"><a href="hiwire?.a=iNextBus&amp;.s=751dd670" id="rideNowButton" title="RideNow">RideNow</a></li><li id="scheduleFinder"><a href="/hiwire?.a=iScheduleLookup&amp;.s=751dd670" id="scheduleFinderButton" title="Schedule Finder">Schedule Finder</a></li><li id="tripPlanner"><a href="/hiwire?.a=iTripPlanning&amp;.s=751dd670" id="tripPlannerButton" title="Trip Planner">Trip Planner</a></li><li id="mobilityPlus"><a href="http://mobilityplus.yrt.ca" title="Mobility Plus">Mobility Plus</a></li><li id="vivaNext"><a href="http://www.vivanext.com" title="Viva Next">Viva Next</a></li></ul></div><div id="footer"><div id="footerNav"><a href="http://www.yrt.ca/en/copyright.asp">© 2010 York Region Transit</a><span class="horizNavSeparator"></span><a href="http://www.yrt.ca/en/privacy.asp">Privacy</a><span class="horizNavSeparator"></span><a href="http://www.yrt.ca/en/websiteaccessibility.asp">Website Accessibility</a><span class="horizNavSeparator"></span><a href="http://www.yrt.ca/en/sitemap.asp">Sitemap</a></div><div id="yorkRegionLogo"><a href="http://www.york.ca" title="York Region" target="_blank">York Region</a></div><div class="clear"></div></div><script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			</script><script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-3377626-1");
+			pageTracker._setDomainName(".yrt.ca");
+			pageTracker._trackPageview();
+		</script></div></div></div></div></body></html>
